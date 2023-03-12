@@ -18,23 +18,56 @@ internal class KodePos
     }
 }
 
+public class DoorMachine
+{
+    private DoorState state;
+
+    public DoorMachine()
+    {
+        state = DoorState.Locked;
+        Console.WriteLine("Pintu terkunci");
+    }
+
+    public void Unlock()
+    {
+        state = DoorState.Unlocked;
+        Console.WriteLine("Pintu tidak terkunci");
+    }
+
+    public void Lock()
+    {
+        state = DoorState.Locked;
+        Console.WriteLine("Pintu terkunci");
+    }
+
+    private enum DoorState
+    {
+        Locked,
+        Unlocked
+    }
+}
 class Program
 {
     static void Main(string[] args)
     {
-        KodePos code = new KodePos();
+        KodePos kodepos = new KodePos();
 
-        Console.WriteLine("Kodepos Batununggal \t: " + code.getKodePos("Batununggal"));
-        Console.WriteLine("Kodepos A. Kujangsari \t: " + code.getKodePos("A. Kujangsari"));
-        Console.WriteLine("Kodepos Mengger \t: " + code.getKodePos("Mengger"));
-        Console.WriteLine("Kodepos Wates \t\t: " + code.getKodePos("Wates"));
-        Console.WriteLine("Kodepos Cijaura \t: " + code.getKodePos("Cijaura"));
-        Console.WriteLine("Kodepos Jatisari \t: " + code.getKodePos("Jatisari"));
-        Console.WriteLine("Kodepos Margasari \t: " + code.getKodePos("Margasari"));
-        Console.WriteLine("Kodepos Sekejati \t: " + code.getKodePos("Sekejati"));
-        Console.WriteLine("Kodepos Kebonwaru \t: " + code.getKodePos("Kebonwaru"));
-        Console.WriteLine("Kodepos Maleer \t\t: " + code.getKodePos("Maleer"));
-        Console.WriteLine("Kodepos Samoja \t\t: " + code.getKodePos("Samoja"));
+        Console.WriteLine("Kodepos Batununggal \t: " + kodepos.getKodePos("Batununggal"));
+        Console.WriteLine("Kodepos A. Kujangsari \t: " + kodepos.getKodePos("A. Kujangsari"));
+        Console.WriteLine("Kodepos Mengger \t: " + kodepos.getKodePos("Mengger"));
+        Console.WriteLine("Kodepos Wates \t\t: " + kodepos.getKodePos("Wates"));
+        Console.WriteLine("Kodepos Cijaura \t: " + kodepos.getKodePos("Cijaura"));
+        Console.WriteLine("Kodepos Jatisari \t: " + kodepos.getKodePos("Jatisari"));
+        Console.WriteLine("Kodepos Margasari \t: " + kodepos.getKodePos("Margasari"));
+        Console.WriteLine("Kodepos Sekejati \t: " + kodepos.getKodePos("Sekejati"));
+        Console.WriteLine("Kodepos Kebonwaru \t: " + kodepos.getKodePos("Kebonwaru"));
+        Console.WriteLine("Kodepos Maleer \t\t: " + kodepos.getKodePos("Maleer"));
+        Console.WriteLine("Kodepos Samoja \t\t: " + kodepos.getKodePos("Samoja"));
+
+        Console.WriteLine("");
+        DoorMachine door = new DoorMachine();
+        door.Unlock();
+        door.Lock();
 
     }
 }
